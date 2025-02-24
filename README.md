@@ -92,7 +92,7 @@ You can modify the following in `config.lua`:
   - Never breaks
 
 ## Support
-For support, join our Discord: [Discord Link]
+For support, join our Discord: [[Discord Link]](https://discord.gg/YQhHbMN3v2)
 
 ## Credits
 Created by LuaLab
