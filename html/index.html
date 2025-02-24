@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="water-container" style="display: none;">
+        <div class="water-dispenser">
+            <div class="dispenser-top">
+                <div class="water-tank">
+                    <div class="water-level">
+                        <div class="water"></div>
+                        <div class="bubbles">
+                            <div class="bubble"></div>
+                            <div class="bubble"></div>
+                            <div class="bubble"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dispenser-controls">
+                <div class="bottle-select">
+                    <label><i class="fas fa-bottle-water"></i> Select Bottle</label>
+                    <select id="bottle-selector">
+                        <option value="">Select a Bottle</option>
+                    </select>
+                </div>
+                <div class="fill-amount">
+                    <label><i class="fas fa-fill-drip"></i> Fill Amount: <span id="amount-display">0%</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="amount-slider" min="0" max="100" value="0">
+                        <div class="slider-progress"></div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="fill-button">
+                        <i class="fas fa-fill"></i>
+                        Fill
+                    </button>
+                    <button id="cancel-button">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

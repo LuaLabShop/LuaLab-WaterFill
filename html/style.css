@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#water-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --primary-black: #1a1a1a;
+    --secondary-black: #2d2d2d;
+    --primary-red: #ff3e3e;
+    --secondary-red: #ff5252;
+    --primary-green: #00c853;
+    --secondary-green: #00e676;
+    --primary-blue: #2196f3;
+    --secondary-blue: #1976d2;
+    --accent-color: #2196f3;
+}
+
+.water-dispenser {
+    width: 350px;
+    background: linear-gradient(145deg, var(--primary-black), var(--secondary-black));
+    border-radius: 20px;
+    color: white;
+    overflow: hidden;
+}
+
+.dispenser-top {
+    height: 200px;
+    position: relative;
+    background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.water-tank {
+    width: 150px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
+
+.water-level {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(0deg, var(--primary-blue), var(--secondary-blue));
+    transition: height 0.3s ease;
+}
+
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: bubble 2s infinite;
+}
+
+.bubble:nth-child(1) { width: 8px; height: 8px; left: 20%; animation-delay: 0s; }
+.bubble:nth-child(2) { width: 6px; height: 6px; left: 50%; animation-delay: 0.5s; }
+.bubble:nth-child(3) { width: 4px; height: 4px; left: 80%; animation-delay: 1s; }
+
+@keyframes bubble {
+    0% { bottom: -20px; opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 120px; opacity: 0; }
+}
+
+.dispenser-controls {
+    padding: 20px;
+    background: var(--primary-black);
+}
+
+.bottle-select, .fill-amount {
+    margin-bottom: 20px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-blue);
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+select option {
+    background: var(--secondary-black);
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-black);
+}
+
+#fill-button {
+    background: linear-gradient(145deg, var(--primary-green), var(--secondary-green));
+    color: white;
+}
+
+#cancel-button {
+    background: linear-gradient(145deg, var(--primary-red), var(--secondary-red));
+    color: white;
+}
+
+button:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#fill-button i, #cancel-button i {
+    color: white;
+}
+
+.fas {
+    color: var(--primary-blue);
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--primary-blue); }
+    50% { box-shadow: 0 0 20px var(--primary-blue); }
+    100% { box-shadow: 0 0 5px var(--primary-blue); }
+}
+
+.water-tank {
+    animation: glow 2s infinite;
+}
+
+select:hover, input[type="range"]:hover {
+    border-color: var(--primary-blue);
+} 
